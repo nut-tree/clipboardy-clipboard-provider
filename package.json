@@ -1,0 +1,31 @@
+{
+  "name": "clipboardy-provider",
+  "version": "1.0.0",
+  "description": "A @nut-tree/nut-js clipboard provider based on clipboardy",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "nut-js",
+    "provider",
+    "clipboard",
+    "clipboardy"
+  ],
+  "author": "Simon Hofmann <simon.hofmann@dry.software",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "clipboardy": "2.3.0"
+  },
+  "devDependencies": {
+    "@nut-tree/nut-js": "3.1.2",
+    "@types/jest": "29.5.5",
+    "jest": "29.7.0",
+    "ts-jest": "29.1.1",
+    "typescript": "5.2.2"
+  },
+  "peerDependencies": {
+    "@nut-tree/nut-js": "^3"
+  }
+}
