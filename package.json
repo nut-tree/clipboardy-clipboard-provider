@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --runInBand",
     "build": "tsc -p .",
+    "publish-next": "npm publish --tag next",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
