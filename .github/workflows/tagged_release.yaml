@@ -8,15 +8,12 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-20.04, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         node: [18]
     runs-on: ${{matrix.os}}
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - uses: ConorMacBride/install-package@v1
-        with:
-          apt: xsel
       - name: Set up node
         uses: actions/setup-node@v2
         with:
@@ -26,7 +23,9 @@ jobs:
       - name: Build
         run: npm run build
       - name: Test
-        run: npm test
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: npm test
 
   deploy:
     needs:
@@ -35,9 +34,6 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - uses: ConorMacBride/install-package@v1
-        with:
-          apt: xsel
       - name: Set up node
         uses: actions/setup-node@v2
         with:
